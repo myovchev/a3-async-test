@@ -1,7 +1,7 @@
 const path = require('path');
 
 require('apostrophe')({
-  shortName: 'a3-boilerplate',
+  shortName: 'a3-async-test',
   modules: {
     // Apostrophe module configuration
     // *******************************
@@ -17,7 +17,7 @@ require('apostrophe')({
         session: {
           // ⚠️ If this still says `undefined`, set a real secret (a random
           // string)!
-          secret: undefined
+          secret: 'secret'
         }
       }
     },
@@ -48,7 +48,15 @@ require('apostrophe')({
     // `asset` supports the project's webpack build for client-side assets.
     asset: {},
     // The project's first custom page type.
-    'default-page': {}
+    'default-page': {},
+    // Test cases
+    'test-case': {},
+    'test-case-widget': {},
+    'test-case-1': {},
+    'test-case-2': {},
+    'test-case-3': {},
+    'test-case-4': {},
+    'test-case-5': {}
 
   }
 });

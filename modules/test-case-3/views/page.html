@@ -1,0 +1,42 @@
+{#
+  This is an example home page template. It inherits and extends a layout template
+  that lives in the top-level views/ folder for convenience
+#}
+
+{% extends "layout.html" %}
+
+{% block main %}
+  <section class="bp-welcome">
+    <h1 class="bp-welcome__headline">
+      {{ data.page.title }}
+    </h1>
+    <div class="bp-welcome__area">
+      <h2>Render WIDGET in custom SYNC tag</h2>
+      <p>
+        The custom tag is just a simple HTML wrapper, the wdiget is rendered inside the
+        body of the tag.<br>
+        You need to login as admin and insert content on that page in order to perform the test.
+      </p>
+      <p>
+        Template: <code>modules/test-case-3/views/page.html</code><br>
+        Widget: <code>modules/test-case-widget/index.js</code><br>
+        Sync Tag: <code>modules/test-case/lib/tags.js</code><br>
+        Client test: <code>src/index.js</code>
+      </p>
+
+      <p>
+        <strong>Render only the WIDGET</strong><br>
+        {% if not data.query['apos-edit']%}<em>Login and edit the page to start the test.</em>{% endif %}
+      </p>
+      {% area data.page, 'f1' %}
+
+      <p>
+        <strong>Render the WIDGET inside the SYNC tag</strong><br>
+        <em>This wont be shown even as your in edit mode, because <code>area</code> is async component.</em>
+      </p>
+        {% container %}
+          {% area data.page, 'f2' %}
+        {% endcontainer %}
+    </div>
+  </section>
+{% endblock %}

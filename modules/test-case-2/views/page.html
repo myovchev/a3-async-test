@@ -1,0 +1,53 @@
+{#
+  This is an example home page template. It inherits and extends a layout template
+  that lives in the top-level views/ folder for convenience
+#}
+
+{% extends "layout.html" %}
+
+{% block main %}
+  <section class="bp-welcome">
+    <h1 class="bp-welcome__headline">
+      {{ data.page.title }}
+    </h1>
+    <div class="bp-welcome__area">
+      <h2>Render ASYNC component in custom ASYNC tag</h2>
+      <p>
+        The custom tag is just a simple HTML wrapper, the async component is rendered inside the
+        body of the tag.
+      </p>
+      <p>
+        Template: <code>modules/test-case-2/views/page.html</code><br>
+        Component: <code>modules/test-case/index.js</code><br>
+        Async Tag: <code>modules/test-case/lib/async-tags.js</code><br>
+        Client test: <code>src/index.js</code>
+      </p>
+
+      <p><strong>Render the ASYNC component</strong></p>
+      <div class="test-case">
+        {% component 'test-case:component' %}
+      </div>
+
+      <p>
+        <strong>Render SYNC data in the ASYNC tag</strong><br>
+      </p>
+      <div class="test-case">
+        {% containerAsync %}
+          Async container
+        {% endcontainerAsync %}
+      </div>
+
+      <p>
+        <strong>Render the ASYNC component in the ASYNC tag</strong><br>
+        <em>Note: we are wating the body to be rendered via callback. This is the key to pass the test.</em><br>
+        For more details see <code>run()</code> method of the async tag definition.
+      </p>
+      <div class="test-case">
+        {% containerAsync %}
+          {% component 'test-case:component' %}
+        {% endcontainerAsync %}
+      </div>
+
+    </div>
+  </section>
+{% endblock %}

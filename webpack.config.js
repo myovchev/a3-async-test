@@ -7,6 +7,7 @@ const publicOutputPath = 'http://localhost:9002/wp/';
 
 module.exports = {
   mode,
+  stats: 'minimal',
   // In production, always be IE11 compatible. In dev, be IE11 compatible
   // if IE11=1 is in the environment, as this currently breaks hot reload:
   // https://github.com/webpack/webpack-dev-server/issues/2758

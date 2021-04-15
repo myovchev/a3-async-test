@@ -1,5 +1,5 @@
 module.exports = {
   options: {
-    label: 'Home Page'
+    refreshOnRestart: true
   }
 };

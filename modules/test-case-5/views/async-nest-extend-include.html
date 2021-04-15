@@ -1,0 +1,8 @@
+{% extends "_ext.html" %}
+
+{% block renderMe %}
+  {% containerAsync %}
+    {% component 'test-case:component' %}
+  {% endcontainerAsync %}
+{% endblock %}
+

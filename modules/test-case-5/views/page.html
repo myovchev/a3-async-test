@@ -1,0 +1,83 @@
+{#
+  This is an example home page template. It inherits and extends a layout template
+  that lives in the top-level views/ folder for convenience
+#}
+
+{% extends "layout.html" %}
+
+{% import 'macro.html' as m %}
+{% import 'fragment.html' as f %}
+
+{% block main %}
+  <section class="bp-welcome">
+    <h1 class="bp-welcome__headline">
+      {{ data.page.title }}
+    </h1>
+    <div class="bp-welcome__area">
+      <h2>Various edge cases</h2>
+      <p>
+        Test how async components play with various nunjucks advanced techniques.
+      </p>
+      <p>
+        Template: <code>modules/test-case-5/views/page.html</code><br>
+        Component: <code>modules/test-case/index.js</code><br>
+        Async Tag: <code>modules/test-case/lib/async-tags.js</code><br>
+        Client test: <code>src/index.js</code>
+      </p>
+
+      <p>
+        <strong>Variable block with async data</strong>
+        <code>{% raw %}{% set varName %}ASYNC DATA{% endset %}{% endraw %}</code>
+      </p>
+      {% set value %}
+        {% component 'test-case:component' %}
+      {% endset %}
+      <div class="test-case">
+        {{ value }}
+      </div>
+
+      <p>
+        <strong>Async component in macro</strong><br>
+        <em>Well known, addressed by Apostrophe 3 <code>fragment</code> (see below).
+      </p>
+      <div class="test-case">
+        {{ f.render() }}
+      </div>
+
+      <p>
+        <strong>Async component in fragment</strong>
+      </p>
+      <div class="test-case">
+        {% render f.render() %}
+      </div>
+
+      <p>
+        <strong>Async component in direct include</strong>
+      </p>
+      <div class="test-case">
+        {% include 'async-include.html' %}
+      </div>
+
+      <p>
+        <strong>Async component nesting in direct include</strong>
+      </p>
+      <div class="test-case">
+        {% include 'async-nest-include.html' %}
+      </div>
+
+      <p>
+        <strong>Async component in include + extend</strong>
+      </p>
+      <div class="test-case">
+        {% include 'async-extend-include.html' %}
+      </div>
+
+      <p>
+        <strong>Async component nesting in include + extend</strong>
+      </p>
+      <div class="test-case">
+        {% include 'async-nest-extend-include.html' %}
+      </div>
+    </div>
+  </section>
+{% endblock %}

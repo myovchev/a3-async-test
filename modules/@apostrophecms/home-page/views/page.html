@@ -11,41 +11,45 @@
       <span class="bp-welcome__version">alpha</span>
     </div>
     <h1 class="bp-welcome__headline">
-      Welcome to Apostrophe 3
+      Nunjucks Async
     </h1>
-    {% if not data.user %}
-      {# Message only for logged out users. #}
-      <h3 class="bp-welcome__help">First time spinning up the ApostropheCMS 3 demo?</h3>
-      <p>
-        Run this in your CLI to create your first user:
-      </p>
-      <pre class="bp-welcome__code">
-        <span class="bp-welcome__code__context">Command Line</span>
-        <code>
-          node app @apostrophecms/user:add myUsername admin
-        </code>
-      </pre>
-      <p class="bp-welcome__cta">
-        <a class="bp-button bp-button--cta" href="/login">Then log in here</a>
-      </p>
-    {% endif %}
-    <p>
-      For a guide on how to configure and customize this project, <a href="https://a3.docs.apostrophecms.com/">please check out the Apostrophe 3 documentation</a>.
-    </p>
     <div class="bp-welcome__area">
-      {% if data.user %}
-        {# Message only for logged in users. #}
-        {% if not data.query['apos-edit'] %}
-          <p>
-            Enter <span class="bp-mode">Edit</span> mode from the admin bar <span style="display:inline-block; transform: rotate(45deg)">👆</span> to begin.
-          </p>
-        {% else %}
-          <p>
-            Add and edit content below in the content area. 👇
-          </p>
-        {% endif %}
-      {% endif %}
-      {% area data.page, 'main' %}
+      <h2>Test Case 1</h2>
+      <p>
+        <a href="/test-case-1">Render ASYNC component in custom SYNC tag</a><br>
+        The custom tag is just a simple HTML wrapper, the async component is rendered inside the
+        body of the tag.
+      </p>
+
+      <h2>Test Case 2</h2>
+      <p>
+        <a href="/test-case-2"> Render ASYNC component in custom ASYNC tag</a><br>
+        The custom tag is just a simple HTML wrapper, the async component is rendered inside the
+        body of the tag.
+      </p>
+
+
+      <h2>Test Case 3</h2>
+      <p>
+        <a href="/test-case-3">Render WIDGET in custom SYNC tag</a><br>
+        You need to login as admin and insert content on that page.
+        The custom tag is just a simple HTML wrapper, the widget is rendered inside the
+        body of the tag.
+      </p>
+
+      <h2>Test Case 4</h2>
+      <p>
+        <a href="/test-case-4">Render WIDGET in custom ASYNC tag</a><br>
+        You need to login as admin and insert content on that page.
+        The custom tag is just a simple HTML wrapper, the widget is rendered inside the
+        body of the tag.
+      </p>
+
+      <h2>Test Case 5</h2>
+      <p>
+        <a href="/test-case-5">Various edge cases</a><br>
+        Test how async components play with various nunjucks advanced techniques.
+      </p>
     </div>
   </section>
 {% endblock %}

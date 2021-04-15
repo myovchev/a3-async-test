@@ -1,0 +1,25 @@
+.test-case {
+  max-width: 500px;
+  min-height: 200px;
+  margin: 1em auto;
+  border: 1px solid $color-gold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  // &__result {
+  // }
+
+  &--fail,
+  &--pass {
+    color: white;
+  }
+
+  &--fail {
+    background-color: rgb(255, 0, 98);
+  }
+
+  &--pass {
+    background-color: rgb(129, 204, 30);
+  }
+}
