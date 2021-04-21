@@ -14,7 +14,7 @@
       Nunjucks Async
     </h1>
     <div class="bp-welcome__area">
-      <h2>Test Case 1</h2>
+      <h2><i fail></i>Test Case 1</h2>
       <p>
         <a href="/test-case-1">Render ASYNC component in custom SYNC tag</a><br>
         The custom tag is just a simple HTML wrapper, the async component is rendered inside the
@@ -29,7 +29,7 @@
       </p>
 
 
-      <h2>Test Case 3</h2>
+      <h2><i fail></i>Test Case 3</h2>
       <p>
         <a href="/test-case-3">Render WIDGET in custom SYNC tag</a><br>
         You need to login as admin and insert content on that page.
@@ -45,10 +45,65 @@
         body of the tag.
       </p>
 
-      <h2>Test Case 5</h2>
+      <h2><i fail></i>Test Case 5</h2>
       <p>
         <a href="/test-case-5">Various edge cases</a><br>
         Test how async components play with various nunjucks advanced techniques.
+      </p>
+
+      <h2><i fail></i>Test Case 6</h2>
+      <p>
+        <a href="/test-case-6">Render ASYNC components in a regular loop from include 1</a><br>
+        Test include having async components in a <code>for</code> loop.<br>
+        There is no other async call in the page body except the include in question.
+      </p>
+
+      <h2><i fail></i>Test Case 7</h2>
+      <p>
+        <a href="/test-case-7">Render ASYNC components in a regular loop from include 2</a><br>
+        Test include having async components in a <code>for</code> loop.<br>
+        We have async component on the page before the include loop.
+      </p>
+
+      <h2>Test Case 8</h2>
+      <p>
+        <a href="/test-case-8">Render ASYNC components in a regular loop from include 3</a><br>
+        Test include having async components in a <code>for</code> loop.<br>
+        We have async component on the page just before every include.
+      </p>
+
+      <h2>Test Case 9</h2>
+      <p>
+        <a href="/test-case-9">Render ASYNC components in async loop from include</a><br>
+        Test include having async components in a <code>asyncEach</code> loop.<br>
+        There is no other async call in the page body except the include in question.
+      </p>
+
+      <h2><i warn></i>Test Case 10</h2>
+      <p>
+        <a href="/test-case-10">Render ASYNC components in regular loop (performance)</a><br>
+        Test performance of rendering async components in a <code>for</code> loop.<br>
+        Be patient and wait till the page is fully loaded.
+      </p>
+
+      <h2><i warn></i>Test Case 11</h2>
+      <p>
+        <a href="/test-case-11">Render ASYNC components in async loop (performance)</a><br>
+        Test performance of rendering async components in a <code>asyncEach</code> loop.<br>
+        Be patient and wait till the page is fully loaded.
+      </p>
+
+      <h2><i warn></i>Test Case 12</h2>
+      <p>
+        <a href="/test-case-12">Render inline ASYNC components (performance)</a><br>
+        Test performance of rendering async components directly in the page, without a loop.<br>
+        Be patient and wait till the page is fully loaded.
+      </p>
+
+      <h2><i fail></i>Test Case 13</h2>
+      <p>
+        <a href="/test-case-13">All about fragments</a><br>
+        Mix fragments, macros and custom async tags.
       </p>
     </div>
   </section>

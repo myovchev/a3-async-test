@@ -1,0 +1,6 @@
+{% fragment print(label = 'A named argument') %}
+  {{ label | json }}
+  {% containerAsync %}
+    {{ label }}
+  {% endcontainerAsync %}
+{% endfragment %}

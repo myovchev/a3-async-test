@@ -56,7 +56,14 @@ require('apostrophe')({
     'test-case-2': {},
     'test-case-3': {},
     'test-case-4': {},
-    'test-case-5': {}
-
+    'test-case-5': {},
+    'test-case-6': {},
+    'test-case-7': {},
+    'test-case-8': {},
+    'test-case-9': {},
+    'test-case-10': {},
+    'test-case-11': {},
+    'test-case-12': {},
+    'test-case-13': {}
   }
 });

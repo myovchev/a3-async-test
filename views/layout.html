@@ -55,5 +55,14 @@
   {# For live reload #}
   {% if data.isDev %}
     <script src="http://localhost:9002/wp/site.js"></script>
+
+    {# The most accessible end of the template point - best possible calculation we can achieve without overriding backend stuff #}
+    <script type="text/javascript">
+      const el = document.getElementById('render-time');
+      if (el) {
+        const res = 'Render time {{ apos.tc.requestTime(data.startTime) }}';
+        el.innerText = res;
+      }
+    </script>
   {% endif %}
 {% endblock %}

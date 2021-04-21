@@ -1,0 +1,15 @@
+{% import "macro.html" as m %}
+{% import "fragment2.html" as f %}
+
+{% fragment print(label) %}
+  {% containerAsync %}
+    <p>{{ label }}</p>
+    <p>{% render _helper('Printed by a fragment helper inside of fragment') %}</p>
+    <p>{% render f.print('Printed inside of a fragment by a fragment from another file') %}</p>
+    <p>{{ m.print(label = 'Printed by a macro inside of a fragment') }}</p>
+  {% endcontainerAsync %}
+{% endfragment %}
+
+{% fragment _helper(label) %}
+  {{ label }}
+{% endfragment %}

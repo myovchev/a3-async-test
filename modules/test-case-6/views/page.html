@@ -1,0 +1,40 @@
+{#
+  This is an example home page template. It inherits and extends a layout template
+  that lives in the top-level views/ folder for convenience
+#}
+
+{% extends "layout.html" %}
+
+{% block main %}
+  <section class="bp-welcome">
+    <h1 class="bp-welcome__headline">
+      {{ data.page.title }}
+    </h1>
+    <div class="bp-welcome__area">
+      <h2>Render ASYNC components in a regular loop from include 1</h2>
+      <p>
+        Test async components from include, which is also extending layout different from the page layout.<br>
+        There is no other async call in the page body except the include in question.
+      </p>
+      <p>
+        Template: <code>modules/test-case-6/views/page.html</code><br>
+        Component: <code>modules/test-case/index.js</code><br>
+        Async Tag: <code>modules/test-case/lib/async-tags.js</code><br>
+        Client test: <code>src/index.js</code>
+      </p>
+
+      {# see views/layout.html #}
+      <h3 id="render-time">n\a</h3>
+      
+      <p>
+        <em>Note: we use `for` loop here.</em>
+        This test fails for just include (with no additional extend) having async components.
+      </p>
+      {% for i in range(0, 3) %}
+        <div class="test-case">
+          {% include "list.html" %}
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+{% endblock %}

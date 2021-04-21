@@ -38,6 +38,20 @@ module.exports = function (self) {
 
         return `<div class="test-case__result${cls}">${body}</div>`;
       }
+    },
+    // Just a dummy async tag, it does nothing.
+    dummyAsync: {
+      async run() {
+        return '';
+      }
+    },
+    // Waith given number of seconds and return label or predefined string
+    waitAsync: {
+      async run(context, seconds, label) {
+        const s = seconds + 0;
+        await new Promise(resolve => setTimeout(resolve, s * 1000));
+        return '<p>' + (label || `Waited ${seconds} second${s !== 1 ? 's' : ''}`) + '</p>';
+      }
     }
   };
 };

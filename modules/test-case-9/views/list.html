@@ -1,0 +1,9 @@
+{% extends "_lt.html" %}
+
+{% block list %}
+  {% containerAsync %}
+    {% component 'test-case:component' %}
+    {% component 'test-case:component' %}
+    {% component 'test-case:component' %}
+  {% endcontainerAsync %}
+{% endblock %}
